@@ -2,7 +2,15 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
-export default ({ isFullScreen, render }) => (
+export type DemoRendererProps = {
+  isFullScreen?: boolean,
+  render: () => ReactClass<*>,
+};
+
+export default ({
+  isFullScreen,
+  render,
+}: DemoRendererProps) => (
   <View style={[styles.demo, isFullScreen && styles.fullScreen]}>
     {render()}
   </View>

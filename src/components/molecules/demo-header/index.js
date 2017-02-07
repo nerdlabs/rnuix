@@ -3,12 +3,19 @@ import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import Icon from '../../atoms/icon';
 
+export type DemoHeaderProps = {
+  isFullScreen?: boolean,
+  onEnterFullScreen?: () => void,
+  onExitFullScreen?: () => void,
+  title: string,
+};
+
 export default ({
   isFullScreen,
   onEnterFullScreen,
   onExitFullScreen,
   title,
-}) => (
+}: DemoHeaderProps) => (
   <View style={styles.header}>
     <Text style={styles.title}>{title}</Text>
     <View style={styles.buttons}>

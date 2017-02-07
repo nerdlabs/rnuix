@@ -7,7 +7,7 @@ export default () => (
   <DemoTile
     style={styles.demo}
     title="Full screen demo"
-    demo={() => (<Text>Demo</Text>)}
+    render={() => (<Text>Demo</Text>)}
     isFullScreen
   />
 );
