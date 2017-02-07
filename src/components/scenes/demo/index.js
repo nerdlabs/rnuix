@@ -3,24 +3,20 @@ import React, { Component } from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
 import DemoTile from '../../organisms/demo-tile';
 
-export default class Demo extends Component {
-  render() {
-    return (
-      <View style={styles.scene}>
-        <DemoTile
-          style={styles.demo}
-          title="Basic button"
-          demo={() => (<Text>Demo</Text>)}
-        />
-        <DemoTile
-          style={styles.demo}
-          title="Large button"
-          demo={() => (<Text>Demo</Text>)}
-        />
-      </View>
-    );
-  }
-}
+export default () => (
+  <View style={styles.scene}>
+    <DemoTile
+      style={styles.demo}
+      title="Basic button"
+      render={() => (<Text>Demo</Text>)}
+    />
+    <DemoTile
+      style={styles.demo}
+      title="Large button"
+      render={() => (<Text>Demo</Text>)}
+    />
+  </View>
+);
 
 const styles = StyleSheet.create({
   scene: {
