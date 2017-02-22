@@ -7,11 +7,9 @@ import ComponentList from './components/scenes/component-list';
 import components from '../components';
 
 class App extends Component {
-  render() {
-    return (
-      <ComponentList components={components} />
-    );
-  }
+    render() {
+        return <ComponentList components={components} />;
+    }
 }
 
 export default () => App;
