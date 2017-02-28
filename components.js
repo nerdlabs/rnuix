@@ -5,4 +5,5 @@ export default [
     require('./src/components/organisms/demo-tile/demo.js').default,
     require('./src/components/scenes/component-list/demo.js').default,
     require('./src/components/scenes/demo/demo.js').default,
+    require('./src/components/scenes/full-screen-demo/demo.js').default,
 ];
