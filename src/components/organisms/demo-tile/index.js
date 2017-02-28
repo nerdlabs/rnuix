@@ -8,7 +8,7 @@ import type { DemoHeaderProps } from '../../molecules/demo-header';
 import type { DemoRendererProps } from '../../atoms/demo-renderer';
 
 export type DemoTileProps = DemoHeaderProps & DemoRendererProps & {
-    style: StyleSheet.Style,
+    style?: StyleSheet.Style,
 };
 
 export default (
