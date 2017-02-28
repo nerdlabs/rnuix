@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+
 import Icon from '../../atoms/icon';
 
 export type DemoHeaderProps = {
@@ -21,9 +22,6 @@ export default (
     <View style={styles.header}>
         <Text style={styles.title}>{title}</Text>
         <View style={styles.buttons}>
-            <TouchableOpacity style={styles.button}>
-                <Icon name="edit" />
-            </TouchableOpacity>
             <TouchableOpacity
                 style={styles.button}
                 onPress={isFullScreen ? onExitFullScreen : onEnterFullScreen}

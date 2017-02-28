@@ -27,8 +27,12 @@ export type NavigationOptions = {
     },
 };
 
+export type Scene<T> = ReactClass<T> & {
+    navigationOptions: NavigationOptions,
+};
+
 export type Routes = {
-    [key: string]: ReactElement<*>,
+    [key: string]: Scene<*>,
 };
 
 export type NavigatorProps = {

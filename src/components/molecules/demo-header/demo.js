@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 
 import DemoHeader from './';
@@ -8,7 +9,7 @@ export default {
     demos: [
         {
             title: 'No title',
-            render: () => <DemoHeader />,
+            render: () => <DemoHeader title="" />,
         },
         {
             title: 'Short title',
