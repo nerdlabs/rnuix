@@ -20,8 +20,8 @@ export default {
                 <DemoTile
                     title="title"
                     isFullScreen
+                    style={{ height: 50 }}
                     render={() => <Text>Content</Text>}
-                    style={{ flex: 1 }}
                 />
             ),
         },

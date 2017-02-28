@@ -5,13 +5,11 @@ import { ListView, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { colors } from '../../../themes';
 import type { Component as ComponentT } from '../../../../type-definitions';
 
-export type ComponentListProps = {
+type ComponentListProps = {
     components: ComponentT[],
     navigate: (route: string, params?: any) => void,
 };
-
 type RenderRowProps = ComponentT;
-
 type DataSource = typeof ListView.DataSource;
 
 export default class ComponentList extends Component {
@@ -53,6 +51,7 @@ export default class ComponentList extends Component {
         return (
             <ListView
                 dataSource={this.state.dataSource}
+                enableEmptySections={true}
                 renderRow={this.renderRow}
             />
         );

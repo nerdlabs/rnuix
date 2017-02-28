@@ -19,7 +19,7 @@ const oneComponent = [
         demos: [],
     },
 ];
-const manyComponents = Array.from({ length: 100 }).map((_, i) => ({
+const manyComponents = Array.from({ length: 8 }).map((_, i) => ({
     displayName: `Component${i}`,
     description: `Demo component #${i}`,
     demos: [],

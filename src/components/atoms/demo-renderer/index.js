@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 import { colors } from '../../../themes';
 
@@ -22,8 +22,8 @@ export default (
 
 const styles = StyleSheet.create({
     demo: {
-        padding: 10,
         backgroundColor: colors.white,
+        padding: 10,
     },
     fullScreen: {
         flex: 1,

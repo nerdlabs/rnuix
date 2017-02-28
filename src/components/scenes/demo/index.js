@@ -1,37 +1,66 @@
 // @flow
-import React from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react';
+import { Image, ListView, StyleSheet, Text, View } from 'react-native';
 
 import { colors } from '../../../themes';
 import DemoTile from '../../organisms/demo-tile';
-import type { Component } from '../../../../type-definitions';
+import type { Component as ComponentT } from '../../../../type-definitions';
 
-export default function Demo(props: Component) {
-    return (
-        <View style={styles.scene}>
-            {props.demos.map((demo, i) => (
-                <DemoTile
-                    key={i}
-                    style={styles.demo}
-                    title={demo.title}
-                    render={demo.render}
-                    onEnterFullScreen={() => props.navigate('fullScreen', demo)}
-                    onExitFullScreen={() => props.navigate('demo', props)}
-                />
-            ))}
-        </View>
-    );
-}
-
-Demo.navigationOptions = {
-    header: {
-        title: ({ scene: { route: { params } } }) => params.displayName,
-    },
+type DemoListProps = {
+    demos: ComponentT[],
 };
+type RenderRowProps = ComponentT;
+type DataSource = typeof ListView.DataSource;
+
+export default class Demo extends Component {
+    static navigationOptions = {
+        header: {
+            title: ({ scene: { route: { params } } }) => params.displayName,
+        },
+    };
+
+    props: DemoListProps;
+
+    state: { dataSource: DataSource };
+
+    dataSource: DataSource;
+
+    constructor(props: DemoListProps) {
+        super(props);
+
+        this.dataSource = new ListView.DataSource({
+            rowHasChanged: (r1, r2) => r1 !== r2,
+        });
+
+        this.state = {
+            dataSource: this.dataSource.cloneWithRows(props.demos),
+        };
+    }
+
+    renderRow = (props: RenderRowProps) => (
+        <DemoTile
+            style={styles.demo}
+            title={props.title}
+            render={props.render}
+            onEnterFullScreen={() => props.navigate('fullScreen', props.demo)}
+            onExitFullScreen={() => props.navigate('demo', props)}
+        />
+    );
+
+    render() {
+        return (
+            <ListView
+                style={styles.scene}
+                dataSource={this.state.dataSource}
+                enableEmptySections={true}
+                renderRow={this.renderRow}
+            />
+        );
+    }
+}
 
 const styles = StyleSheet.create({
     scene: {
-        flex: 1,
         padding: 10,
     },
     demo: {

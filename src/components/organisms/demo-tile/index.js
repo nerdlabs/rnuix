@@ -22,7 +22,7 @@ export default (
         title,
     }: DemoTileProps,
 ) => (
-    <View style={[styles.container, style]}>
+    <View style={[isFullScreen ? null : styles.container, style]}>
         {isFullScreen
             ? null
             : <DemoHeader
