@@ -11,7 +11,7 @@ export default (
     {
         isFullScreen,
         render,
-    }: DemoRendererProps
+    }: DemoRendererProps,
 ) => (
     <View style={[styles.demo, isFullScreen && styles.fullScreen]}>
         {render()}
