@@ -4,7 +4,7 @@
 	"private": true,
 	"scripts": {
 		"start": "node node_modules/react-native/local-cli/cli.js start",
-		"fmt": "prettier --write --print-width 80 --tab-width 4 --single-quote --trailing-comma --bracket-spacing --parser flow '!(node_modules)/**/*.js' '*.js'",
+		"fmt": "prettier --write --print-width 80 --tab-width 4 --single-quote --trailing-comma all --bracket-spacing --parser flow '!(node_modules)/**/*.js' '*.js'",
 		"test": "jest",
 		"flow": "flow"
 	},
