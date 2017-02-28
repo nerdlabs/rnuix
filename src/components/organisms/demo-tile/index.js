@@ -2,6 +2,7 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
+import { colors } from '../../../themes';
 import DemoHeader from '../../molecules/demo-header';
 import DemoRenderer from '../../atoms/demo-renderer';
 import type { DemoHeaderProps } from '../../molecules/demo-header';
@@ -35,5 +36,9 @@ export default (
 );
 
 const styles = StyleSheet.create({
-    container: {},
+    container: {
+        borderColor: colors.silverDark,
+        borderRadius: 3,
+        borderWidth: StyleSheet.hairlineWidth,
+    },
 });

@@ -2,6 +2,7 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
+import { colors } from '../../../themes';
 import Icon from '../../atoms/icon';
 
 export type DemoHeaderProps = {
@@ -34,15 +35,19 @@ export default (
 
 const styles = StyleSheet.create({
     header: {
+        alignItems: 'center',
+        borderTopLeftRadius: 3,
+        borderTopRightRadius: 3,
+        backgroundColor: colors.silverLight,
         flexDirection: 'row',
         justifyContent: 'space-between',
-        alignItems: 'center',
-        padding: 10,
-        backgroundColor: 'lightgray',
+        paddingHorizontal: 10,
     },
     title: {
-        fontSize: 16,
-        lineHeight: 16,
+        fontSize: 12,
+        color: colors.black,
+        fontWeight: 'bold',
+        paddingVertical: 5,
     },
     buttons: {
         flexDirection: 'row',

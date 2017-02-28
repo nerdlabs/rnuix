@@ -1,6 +1,8 @@
 // @flow
 import React, { Component } from 'react';
-import { ListView, Text, TouchableOpacity } from 'react-native';
+import { ListView, StyleSheet, Text, TouchableOpacity } from 'react-native';
+
+import { colors } from '../../../themes';
 import type { Component as ComponentT } from '../../../../type-definitions';
 
 export type ComponentListProps = {
@@ -38,8 +40,12 @@ export default class ComponentList extends Component {
     }
 
     renderRow = (props: RenderRowProps) => (
-        <TouchableOpacity onPress={() => this.props.navigate('demo', props)}>
-            <Text>{props.displayName}</Text>
+        <TouchableOpacity
+            onPress={() => this.props.navigate('demo', props)}
+            style={styles.row}
+        >
+            <Text style={styles.displayName}>{props.displayName}</Text>
+            <Text style={styles.description}>{props.description}</Text>
         </TouchableOpacity>
     );
 
@@ -52,3 +58,21 @@ export default class ComponentList extends Component {
         );
     }
 }
+
+const styles = StyleSheet.create({
+    row: {
+        backgroundColor: colors.white,
+        borderBottomColor: colors.silverDark,
+        borderBottomWidth: 1,
+        padding: 10,
+    },
+    displayName: {
+        color: colors.black,
+        fontWeight: 'bold',
+        marginBottom: 3,
+    },
+    description: {
+        color: colors.gray,
+        fontSize: 12,
+    },
+});
