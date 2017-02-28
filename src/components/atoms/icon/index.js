@@ -1,5 +1,16 @@
 // @flow
-import withProps from 'recompose/withProps';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import React from 'react';
+import { Image } from 'react-native';
 
-export default withProps({ size: 24 })(Icon);
+export type IconProps = {
+    name: string,
+};
+
+export default function Icon({ name }: IconProps) {
+    return <Image source={icons[name]} />;
+}
+
+const icons = {
+    fullscreen: require('./assets/ic_fullscreen.png'),
+    'fullscreen-exit': require('./assets/ic_fullscreen_exit.png'),
+};
