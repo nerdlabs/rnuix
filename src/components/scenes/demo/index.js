@@ -2,6 +2,7 @@
 import React from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
 
+import { colors } from '../../../themes';
 import DemoTile from '../../organisms/demo-tile';
 import type { Component } from '../../../../type-definitions';
 
@@ -32,7 +33,6 @@ const styles = StyleSheet.create({
     scene: {
         flex: 1,
         padding: 10,
-        backgroundColor: 'gray',
     },
     demo: {
         marginBottom: 10,
