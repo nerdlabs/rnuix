@@ -1,12 +1,7 @@
 // @flow
 import React, { Component } from 'react';
 import { ListView, Text, TouchableOpacity } from 'react-native';
-
-// TODO: define outside and import only type
-type ComponentT = {
-    displayName: string,
-    description: string,
-};
+import type { Component as ComponentT } from '../../../../type-definitions';
 
 export type ComponentListProps = {
     components: ComponentT[],
@@ -40,11 +35,9 @@ export default class ComponentList extends Component {
         };
     }
 
-    renderRow = ({ displayName }: RenderRowProps) => (
-        <TouchableOpacity
-            onPress={() => this.props.navigate('demo', { displayName })}
-        >
-            <Text>{displayName}</Text>
+    renderRow = (props: RenderRowProps) => (
+        <TouchableOpacity onPress={() => this.props.navigate('demo', props)}>
+            <Text>{props.displayName}</Text>
         </TouchableOpacity>
     );
 

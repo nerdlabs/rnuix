@@ -16,7 +16,7 @@ export default (
         onEnterFullScreen,
         onExitFullScreen,
         title,
-    }: DemoHeaderProps
+    }: DemoHeaderProps,
 ) => (
     <View style={styles.header}>
         <Text style={styles.title}>{title}</Text>
