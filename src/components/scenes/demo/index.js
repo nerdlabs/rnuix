@@ -1,10 +1,11 @@
 // @flow
-import React, { Component } from 'react';
+import React from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
-import DemoTile from '../../organisms/demo-tile';
-import type { Component as ComponentT } from '../../../../type-definitions';
 
-export default function Demo(props: ComponentT) {
+import DemoTile from '../../organisms/demo-tile';
+import type { Component } from '../../../../type-definitions';
+
+export default function Demo(props: Component) {
     return (
         <View style={styles.scene}>
             {props.demos.map((demo, i) => (

@@ -4,7 +4,7 @@ import { StyleSheet, View } from 'react-native';
 
 export type DemoRendererProps = {
     isFullScreen?: boolean,
-    render: () => ReactClass<*>,
+    render: () => ReactElement<*>,
 };
 
 export default (

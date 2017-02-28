@@ -2,8 +2,9 @@
 import React from 'react';
 import { StyleSheet, Text } from 'react-native';
 import DemoTile from '../../organisms/demo-tile';
+import type { Component } from '../../../../type-definitions';
 
-export default function FullScreenDemo(props) {
+export default function FullScreenDemo(props: Component) {
     return (
         <DemoTile
             style={styles.demo}
