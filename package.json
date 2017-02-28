@@ -5,8 +5,11 @@
 	"scripts": {
 		"start": "node node_modules/react-native/local-cli/cli.js start",
 		"fmt": "prettier --write --print-width 80 --tab-width 4 --single-quote --trailing-comma all --bracket-spacing --parser flow '!(node_modules)/**/*.js' '*.js'",
-		"test": "jest",
-		"flow": "flow"
+		"test": "npm run flow && npm run jest",
+		"flow": "flow",
+		"jest": "exit 0; #jest",
+		"precommit": "npm run fmt",
+		"prepush": "npm run test"
 	},
 	"dependencies": {
 		"react": "15.4.2",
@@ -17,6 +20,7 @@
 		"babel-plugin-transform-flow-strip-types": "6.22.0",
 		"babel-preset-react-native": "1.9.1",
 		"flow-bin": "0.37.0",
+		"husky": "0.13.1",
 		"jest": "19.0.1",
 		"prettier": "0.19.0",
 		"react-test-renderer": "15.4.2"
