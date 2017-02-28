@@ -19,15 +19,17 @@ export default (
         onExitFullScreen,
         style,
         title,
-    }: DemoTileProps
+    }: DemoTileProps,
 ) => (
     <View style={[styles.container, style]}>
-        <DemoHeader
-            isFullScreen={isFullScreen}
-            onEnterFullScreen={onEnterFullScreen}
-            onExitFullScreen={onExitFullScreen}
-            title={title}
-        />
+        {isFullScreen
+            ? null
+            : <DemoHeader
+                  isFullScreen={isFullScreen}
+                  onEnterFullScreen={onEnterFullScreen}
+                  onExitFullScreen={onExitFullScreen}
+                  title={title}
+              />}
         <DemoRenderer render={render} isFullScreen={isFullScreen} />
     </View>
 );

@@ -14,7 +14,9 @@ type DataSource = typeof ListView.DataSource;
 
 export default class ComponentList extends Component {
     static navigationOptions = {
-        title: 'Components',
+        header: {
+            title: 'Components',
+        },
     };
 
     props: ComponentListProps;

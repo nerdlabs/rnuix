@@ -13,6 +13,8 @@ export default function Demo(props: ComponentT) {
                     style={styles.demo}
                     title={demo.title}
                     render={demo.render}
+                    onEnterFullScreen={() => props.navigate('fullScreen', demo)}
+                    onExitFullScreen={() => props.navigate('demo', props)}
                 />
             ))}
         </View>
