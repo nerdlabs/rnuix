@@ -39,6 +39,6 @@ const styles = StyleSheet.create({
     container: {
         borderColor: colors.silverDark,
         borderRadius: 3,
-        borderWidth: StyleSheet.hairlineWidth,
+        borderWidth: 0.5,
     },
 });

@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { ListView, StyleSheet, Text, TouchableOpacity } from 'react-native';
 
 import { colors } from '../../../themes';
+import ComponentRow from '../../molecules/component-row';
 import type { Component as ComponentT } from '../../../../type-definitions';
 
 type ComponentListProps = {
@@ -38,16 +39,14 @@ export default class ComponentList extends Component {
     }
 
     renderRow = (props: RenderRowProps) => (
-        <TouchableOpacity
+        <ComponentRow
+            title={props.displayName}
+            description={props.description}
             onPress={() => this.props.navigate('demo', {
                 ...props,
                 navigate: this.props.navigate,
             })}
-            style={styles.row}
-        >
-            <Text style={styles.displayName}>{props.displayName}</Text>
-            <Text style={styles.description}>{props.description}</Text>
-        </TouchableOpacity>
+        />
     );
 
     render() {
@@ -60,21 +59,3 @@ export default class ComponentList extends Component {
         );
     }
 }
-
-const styles = StyleSheet.create({
-    row: {
-        backgroundColor: colors.white,
-        borderBottomColor: colors.silverDark,
-        borderBottomWidth: 1,
-        padding: 10,
-    },
-    displayName: {
-        color: colors.black,
-        fontWeight: 'bold',
-        marginBottom: 3,
-    },
-    description: {
-        color: colors.gray,
-        fontSize: 12,
-    },
-});

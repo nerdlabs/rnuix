@@ -1,9 +1,10 @@
 // @flow
 import React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 import { colors } from '../../../themes';
 import Icon from '../../atoms/icon';
+import Touchable from '../../atoms/touchable';
 
 export type DemoHeaderProps = {
     isFullScreen?: boolean,
@@ -23,12 +24,12 @@ export default (
     <View style={styles.header}>
         <Text style={styles.title}>{title}</Text>
         <View style={styles.buttons}>
-            <TouchableOpacity
+            <Touchable
                 style={styles.button}
                 onPress={isFullScreen ? onExitFullScreen : onEnterFullScreen}
             >
                 <Icon name={isFullScreen ? 'fullscreen-exit' : 'fullscreen'} />
-            </TouchableOpacity>
+            </Touchable>
         </View>
     </View>
 );
