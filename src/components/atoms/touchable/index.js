@@ -12,24 +12,23 @@ import type Children from 'react-native';
 type TouchableProps = typeof TouchableNativeFeedback & typeof TouchableOpacity & {
     children?: Children,
     style?: StyleSheet.Style,
-    touchableStyle?: StyleSheet.Style,
 };
 
 export default function Touchable(
     {
         children,
         style,
-        touchableStyle,
         ...props
     }: TouchableProps,
 ) {
-    const Touchable = Platform.OS === 'android'
+    const useNativeFeedback = Platform.OS === 'android';
+    const Touchable = useNativeFeedback
         ? TouchableNativeFeedback
         : TouchableOpacity;
 
     return (
-        <Touchable style={touchableStyle} {...props}>
-            <View style={style}>
+        <Touchable style={useNativeFeedback ? null : style} {...props}>
+            <View style={useNativeFeedback ? style : null}>
                 {children}
             </View>
         </Touchable>
