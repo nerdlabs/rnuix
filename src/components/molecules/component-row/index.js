@@ -12,19 +12,21 @@ export type ComponentRowProps = {
     style?: StyleSheet.Style,
 };
 
-export default (
+export default function ComponentRow(
     {
         title,
         description,
         onPress,
         style,
     }: ComponentRowProps,
-) => (
-    <Touchable onPress={onPress} style={[styles.row, style]}>
-        <Text style={styles.displayName}>{title}</Text>
-        <Text style={styles.description}>{description}</Text>
-    </Touchable>
-);
+) {
+    return (
+        <Touchable onPress={onPress} style={[styles.row, style]}>
+            <Text style={styles.displayName}>{title}</Text>
+            <Text style={styles.description}>{description}</Text>
+        </Touchable>
+    );
+}
 
 const styles = StyleSheet.create({
     row: {

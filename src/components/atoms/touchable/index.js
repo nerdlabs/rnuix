@@ -1,31 +1,37 @@
 // @flow
 import React from 'react';
-
 import {
     Platform,
+    StyleSheet,
     TouchableNativeFeedback,
     TouchableOpacity,
     View,
 } from 'react-native';
+import type Children from 'react-native';
 
-import type { Component as ComponentT } from '../../../../type-definitions';
+type TouchableProps = typeof TouchableNativeFeedback & typeof TouchableOpacity & {
+    children?: Children,
+    style?: StyleSheet.Style,
+    touchableStyle?: StyleSheet.Style,
+};
 
-const Touchable = Platform.OS === 'android'
-    ? TouchableNativeFeedback
-    : TouchableOpacity;
-
-export default (
+export default function Touchable(
     {
         children,
         style,
+        touchableStyle,
         ...props
-    }: ComponentT,
-) => {
+    }: TouchableProps,
+) {
+    const Touchable = Platform.OS === 'android'
+        ? TouchableNativeFeedback
+        : TouchableOpacity;
+
     return (
-        <Touchable {...props}>
+        <Touchable style={touchableStyle} {...props}>
             <View style={style}>
                 {children}
             </View>
         </Touchable>
     );
-};
+}

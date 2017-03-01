@@ -12,7 +12,7 @@ export type DemoTileProps = DemoHeaderProps & DemoRendererProps & {
     style?: StyleSheet.Style,
 };
 
-export default (
+export default function DemoTile(
     {
         render,
         isFullScreen = false,
@@ -21,19 +21,21 @@ export default (
         style,
         title,
     }: DemoTileProps,
-) => (
-    <View style={[isFullScreen ? null : styles.container, style]}>
-        {isFullScreen
-            ? null
-            : <DemoHeader
-                  isFullScreen={isFullScreen}
-                  onEnterFullScreen={onEnterFullScreen}
-                  onExitFullScreen={onExitFullScreen}
-                  title={title}
-              />}
-        <DemoRenderer render={render} isFullScreen={isFullScreen} />
-    </View>
-);
+) {
+    return (
+        <View style={[isFullScreen ? null : styles.container, style]}>
+            {isFullScreen
+                ? null
+                : <DemoHeader
+                      isFullScreen={isFullScreen}
+                      onEnterFullScreen={onEnterFullScreen}
+                      onExitFullScreen={onExitFullScreen}
+                      title={title}
+                  />}
+            <DemoRenderer render={render} isFullScreen={isFullScreen} />
+        </View>
+    );
+}
 
 const styles = StyleSheet.create({
     container: {

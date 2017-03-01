@@ -6,19 +6,26 @@ import { colors } from '../../../themes';
 
 export type DemoRendererProps = {
     isFullScreen?: boolean,
-    render: () => ReactElement<*>,
+    render: () => React.Element<*>,
 };
 
-export default (
+export default function DemoRenderer(
     {
         isFullScreen,
         render,
     }: DemoRendererProps,
-) => (
-    <View style={[styles.demo, isFullScreen ? styles.fullScreen : styles.tile]}>
-        {render()}
-    </View>
-);
+) {
+    return (
+        <View
+            style={[
+                styles.demo,
+                isFullScreen ? styles.fullScreen : styles.tile,
+            ]}
+        >
+            {render()}
+        </View>
+    );
+}
 
 const styles = StyleSheet.create({
     demo: {

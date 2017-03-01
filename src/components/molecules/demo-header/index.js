@@ -13,47 +13,55 @@ export type DemoHeaderProps = {
     title: string,
 };
 
-export default (
+export default function DemoHeader(
     {
         isFullScreen,
         onEnterFullScreen,
         onExitFullScreen,
         title,
     }: DemoHeaderProps,
-) => (
-    <View style={styles.header}>
-        <Text style={styles.title}>{title}</Text>
-        <View style={styles.buttons}>
-            <Touchable
-                style={styles.button}
-                onPress={isFullScreen ? onExitFullScreen : onEnterFullScreen}
-            >
-                <Icon name={isFullScreen ? 'fullscreen-exit' : 'fullscreen'} />
-            </Touchable>
+) {
+    return (
+        <View style={styles.header}>
+            <Text style={styles.title}>{title}</Text>
+            <View style={styles.buttons}>
+                <Touchable
+                    style={styles.button}
+                    onPress={
+                        isFullScreen ? onExitFullScreen : onEnterFullScreen
+                    }
+                >
+                    <Icon
+                        name={isFullScreen ? 'fullscreen-exit' : 'fullscreen'}
+                    />
+                </Touchable>
+            </View>
         </View>
-    </View>
-);
+    );
+}
 
 const styles = StyleSheet.create({
     header: {
-        alignItems: 'center',
+        alignItems: 'stretch',
         borderTopLeftRadius: 3,
         borderTopRightRadius: 3,
         backgroundColor: colors.silverLight,
         flexDirection: 'row',
         justifyContent: 'space-between',
-        paddingHorizontal: 10,
     },
     title: {
-        fontSize: 12,
+        flex: 1,
+        fontSize: 14,
         color: colors.black,
         fontWeight: 'bold',
+        paddingHorizontal: 10,
         paddingVertical: 5,
     },
     buttons: {
         flexDirection: 'row',
     },
     button: {
-        marginLeft: 10,
+        justifyContent: 'center',
+        padding: 5,
     },
 });
