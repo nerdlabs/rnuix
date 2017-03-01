@@ -39,7 +39,10 @@ export default class ComponentList extends Component {
 
     renderRow = (props: RenderRowProps) => (
         <TouchableOpacity
-            onPress={() => this.props.navigate('demo', props)}
+            onPress={() => this.props.navigate('demo', {
+                ...props,
+                navigate: this.props.navigate,
+            })}
             style={styles.row}
         >
             <Text style={styles.displayName}>{props.displayName}</Text>

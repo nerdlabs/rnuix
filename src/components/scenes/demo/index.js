@@ -8,6 +8,7 @@ import type { Component as ComponentT } from '../../../../type-definitions';
 
 type DemoListProps = {
     demos: ComponentT[],
+    navigate: (route: string, params?: any) => void,
 };
 type RenderRowProps = ComponentT;
 type DataSource = typeof ListView.DataSource;
@@ -42,8 +43,8 @@ export default class Demo extends Component {
             style={styles.demo}
             title={props.title}
             render={props.render}
-            onEnterFullScreen={() => props.navigate('fullScreen', props.demo)}
-            onExitFullScreen={() => props.navigate('demo', props)}
+            onEnterFullScreen={() => this.props.navigate('fullScreen', props)}
+            onExitFullScreen={() => this.props.navigate('demo', props)}
         />
     );
 
