@@ -1,5 +1,6 @@
 // @flow
 import { AppRegistry } from 'react-native';
-import App from './src';
+import createApp from './src';
+import components from './components';
 
-AppRegistry.registerComponent('rnuix', App);
+AppRegistry.registerComponent('rnuix', createApp(components));
