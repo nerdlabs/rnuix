@@ -1,4 +1,3 @@
-// @flow
 import React, { Component } from 'react';
 import { BackAndroid, NavigationExperimental, Platform } from 'react-native';
 
