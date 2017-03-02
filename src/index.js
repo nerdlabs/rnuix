@@ -1,7 +1,7 @@
 // @flow
 import React, { Component } from 'react';
 
-import Navigator from './navigator';
+import Navigator from './components/containers/navigator';
 
 import Demo from './components/scenes/demo';
 import FullScreenDemo from './components/scenes/full-screen-demo';

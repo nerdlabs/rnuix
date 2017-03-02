@@ -20,14 +20,14 @@ type SceneProps = NavigationSceneRendererProps & {
 export type NavigationOptions = {
     direction?: 'horizontal' | 'vertical',
     header?: {
-        left?: ReactElement<*>,
-        right?: ReactElement<*>,
-        title?: string | ((params: any) => string) | ReactElement<*>,
+        left?: ReactClass<*>,
+        right?: ReactClass<*>,
+        title?: string | ((params: any) => string) | ReactClass<*>,
     },
 };
 
 export type Scene<T> = ReactClass<T> & {
-    navigationOptions: NavigationOptions,
+    navigationOptions?: NavigationOptions,
 };
 
 export type Routes = {
