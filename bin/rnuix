@@ -1,0 +1,12 @@
+#! /usr/bin/env node
+
+const program = require('commander');
+const version = require('../package.json').version;
+
+program
+    .version(version)
+    .command(
+        'collect [<path>]',
+        'Find all "demo.js" files in current working dir or - if specified - the path passed in as argument'
+    )
+    .parse(process.argv);
