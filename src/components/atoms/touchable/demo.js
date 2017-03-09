@@ -10,12 +10,19 @@ export default {
     demos: [
         {
             title: 'Text content',
-            render: () => <Touchable><Text>Touch me!</Text></Touchable>,
+            render: () => (
+                <Touchable onPress={() => {}}><Text>Touch me!</Text></Touchable>
+            ),
+        },
+        {
+            title: 'No onPress disables feedback',
+            render: () => <Touchable><Text>Can't touch this</Text></Touchable>,
         },
         {
             title: 'Custom style',
             render: () => (
                 <Touchable
+                    onPress={() => {}}
                     style={{
                         backgroundColor: '#78c',
                         borderRadius: 3,
@@ -31,6 +38,31 @@ export default {
                         }}
                     >
                         Touch me!
+                    </Text>
+                </Touchable>
+            ),
+        },
+        {
+            title: 'Custom style, disabled',
+            render: () => (
+                <Touchable
+                    disabled
+                    onPress={() => {}}
+                    style={{
+                        backgroundColor: '#78c',
+                        borderRadius: 3,
+                        margin: 10,
+                        padding: 10,
+                    }}
+                >
+                    <Text
+                        style={{
+                            color: '#fff',
+                            fontWeight: 'bold',
+                            textAlign: 'center',
+                        }}
+                    >
+                        Can't touch this
                     </Text>
                 </Touchable>
             ),

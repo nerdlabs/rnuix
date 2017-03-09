@@ -23,7 +23,9 @@ export default function DemoHeader(
 ) {
     return (
         <View style={styles.header}>
-            <Text style={styles.title}>{title}</Text>
+            <View style={styles.title}>
+                <Text style={styles.titleText}>{title}</Text>
+            </View>
             <View style={styles.buttons}>
                 <Touchable
                     style={styles.button}
@@ -51,11 +53,14 @@ const styles = StyleSheet.create({
     },
     title: {
         flex: 1,
+        justifyContent: 'center',
+        paddingHorizontal: 10,
+        paddingVertical: 5,
+    },
+    titleText: {
         fontSize: 14,
         color: colors.black,
         fontWeight: 'bold',
-        paddingHorizontal: 10,
-        paddingVertical: 5,
     },
     buttons: {
         flexDirection: 'row',
