@@ -14,14 +14,15 @@ const routes = {
     fullScreen: FullScreenDemo,
 };
 
-export default (components: ComponentT[] = []) => () =>
-    class App extends Component {
-        render() {
-            return (
-                <Navigator
-                    routes={routes}
-                    initialRoute={{ key: 'list', params: { components } }}
-                />
-            );
-        }
-    };
+export default (components: ComponentT[] = []) =>
+    () =>
+        class App extends Component {
+            render() {
+                return (
+                    <Navigator
+                        routes={routes}
+                        initialRoute={{ key: 'list', params: { components } }}
+                    />
+                );
+            }
+        };

@@ -42,10 +42,11 @@ export default class ComponentList extends Component {
         <ComponentRow
             title={props.displayName}
             description={props.description}
-            onPress={() => this.props.navigate('demo', {
-                ...props,
-                navigate: this.props.navigate,
-            })}
+            onPress={() =>
+                this.props.navigate('demo', {
+                    ...props,
+                    navigate: this.props.navigate,
+                })}
         />
     );
 
