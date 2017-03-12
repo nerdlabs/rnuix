@@ -13,8 +13,8 @@
 		"prepush": "npm run test"
 	},
 	"peerDependencies": {
-		"react": "15.4.2",
-		"react-native": "0.41.2"
+		"react": ">=15.4.0-rc.4 <= 15.4.2",
+		"react-native": ">=0.39.0 <= 0.42.2"
 	},
 	"devDependencies": {
 		"babel-jest": "19.0.0",
