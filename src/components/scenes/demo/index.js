@@ -6,35 +6,41 @@ import { colors } from '../../../themes';
 import DemoTile from '../../organisms/demo-tile';
 import type { Component as ComponentT } from '../../../../type-definitions';
 
-type DemoListProps = {
-    demos: ComponentT[],
-    navigate: (route: string, params?: any) => void,
+export type Props = {
+    navigation: {
+        navigate: (route: string, params?: any) => void,
+        state: {
+            params: {
+                demos: ComponentT[],
+            },
+        },
+    },
 };
 type RenderRowProps = ComponentT;
 type DataSource = typeof ListView.DataSource;
 
 export default class Demo extends Component {
     static navigationOptions = {
-        header: {
-            title: ({ scene: { route: { params } } }) => params.displayName,
-        },
+        title: ({ state: { params } }) => params.displayName,
     };
 
-    props: DemoListProps;
+    props: Props;
 
     state: { dataSource: DataSource };
 
     dataSource: DataSource;
 
-    constructor(props: DemoListProps) {
+    constructor(props: Props) {
         super(props);
 
         this.dataSource = new ListView.DataSource({
             rowHasChanged: (r1, r2) => r1 !== r2,
         });
 
+        const { state: { params } } = props.navigation;
+
         this.state = {
-            dataSource: this.dataSource.cloneWithRows(props.demos),
+            dataSource: this.dataSource.cloneWithRows(params.demos),
         };
     }
 
@@ -43,8 +49,10 @@ export default class Demo extends Component {
             style={styles.demo}
             title={props.title}
             render={props.render}
-            onEnterFullScreen={() => this.props.navigate('fullScreen', props)}
-            onExitFullScreen={() => this.props.navigate('demo', props)}
+            onEnterFullScreen={() =>
+                this.props.navigation.navigate('fullScreen', props)}
+            onExitFullScreen={() =>
+                this.props.navigation.navigate('demo', props)}
         />
     );
 
