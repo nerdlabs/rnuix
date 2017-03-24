@@ -17,7 +17,8 @@
 		"chokidar": "1.6.1",
 		"commander": "2.9.0",
 		"denodeify": "1.2.1",
-		"glob": "7.1.1"
+		"glob": "7.1.1",
+		"react-navigation": "1.0.0-beta.7"
 	},
 	"peerDependencies": {
 		"react": ">=15.4.0-rc.4 <= 15.4.2",
