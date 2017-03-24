@@ -34,26 +34,25 @@ type TouchableProps = typeof TouchableNativeFeedback & typeof TouchableOpacity &
     children?: Children,
     disabled?: boolean,
     onPress?: () => void,
+    onLongPress?: () => void,
 };
 
 export default function Touchable(
     {
         children,
         disabled,
+        onLongPress,
         onPress,
         ...props
     }: TouchableProps,
 ) {
-    const useNativeFeedback = Platform.OS === 'android';
-    const Touchable = useNativeFeedback
+    const Touchable = Platform.OS === 'android'
         ? StyledTouchableNativeFeedback
         : TouchableOpacity;
-    const Wrapper = disabled || typeof onPress !== 'function'
-        ? View
-        : Touchable;
+    const Wrapper = !disabled && (onLongPress || onPress) ? Touchable : View;
 
     return (
-        <Wrapper onPress={onPress} {...props}>
+        <Wrapper onLongPress={onLongPress} onPress={onPress} {...props}>
             {children}
         </Wrapper>
     );
