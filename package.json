@@ -21,18 +21,18 @@
 	},
 	"peerDependencies": {
 		"react": ">=15.4.0-rc.4 <= 15.4.2",
-		"react-native": ">=0.39.0 <= 0.42.2"
+		"react-native": ">=0.39.0 <= 0.42.3"
 	},
 	"devDependencies": {
 		"babel-jest": "19.0.0",
 		"babel-plugin-transform-flow-strip-types": "6.22.0",
 		"babel-preset-react-native": "1.9.1",
 		"flow-bin": "0.38.0",
-		"husky": "0.13.2",
+		"husky": "0.13.3",
 		"jest": "19.0.2",
 		"prettier": "0.22.0",
 		"react": "15.4.2",
-		"react-native": "0.42.0",
+		"react-native": "0.42.3",
 		"react-test-renderer": "15.4.2"
 	},
 	"jest": {
