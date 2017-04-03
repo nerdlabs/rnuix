@@ -12,8 +12,14 @@ export default {
             title: 'Example',
             render: () => (
                 <FullScreenDemo
-                    title="title"
-                    render={() => <Text>Demo</Text>}
+                    navigation={{
+                        state: {
+                            params: {
+                                title: 'title',
+                                render: () => <Text>Demo</Text>,
+                            },
+                        },
+                    }}
                 />
             ),
         },

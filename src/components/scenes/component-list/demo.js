@@ -32,21 +32,33 @@ export default {
         {
             title: 'No components',
             render: () => (
-                <ComponentList components={noComponents} navigate={navigate} />
+                <ComponentList
+                    navigation={{
+                        state: { params: { components: noComponents } },
+                        navigate,
+                    }}
+                />
             ),
         },
         {
             title: 'One component',
             render: () => (
-                <ComponentList components={oneComponent} navigate={navigate} />
+                <ComponentList
+                    navigation={{
+                        state: { params: { components: oneComponent } },
+                        navigate,
+                    }}
+                />
             ),
         },
         {
             title: 'Many components',
             render: () => (
                 <ComponentList
-                    components={manyComponents}
-                    navigate={navigate}
+                    navigation={{
+                        state: { params: { components: manyComponents } },
+                        navigate,
+                    }}
                 />
             ),
         },

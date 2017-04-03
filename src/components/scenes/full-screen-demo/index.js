@@ -4,7 +4,17 @@ import { StyleSheet, Text } from 'react-native';
 import DemoTile from '../../organisms/demo-tile';
 import type { Component } from '../../../../type-definitions';
 
-export default function FullScreenDemo(props: Component) {
+export type Props = {
+    navigation: {
+        state: {
+            params: Component,
+        },
+    },
+};
+
+export default function FullScreenDemo(
+    { navigation: { state: { params: props } } }: Props,
+) {
     return (
         <DemoTile
             style={styles.demo}
@@ -16,9 +26,7 @@ export default function FullScreenDemo(props: Component) {
 }
 
 FullScreenDemo.navigationOptions = {
-    header: {
-        title: ({ scene: { route: { params } } }) => params.title,
-    },
+    title: ({ state: { params } }) => params.title,
 };
 
 const styles = StyleSheet.create({

@@ -6,35 +6,41 @@ import { colors } from '../../../themes';
 import ComponentRow from '../../molecules/component-row';
 import type { Component as ComponentT } from '../../../../type-definitions';
 
-type ComponentListProps = {
-    components: ComponentT[],
-    navigate: (route: string, params?: any) => void,
+export type Props = {
+    navigation: {
+        navigate: (route: string, params?: any) => void,
+        state: {
+            params: {
+                components: ComponentT[],
+            },
+        },
+    },
 };
 type RenderRowProps = ComponentT;
 type DataSource = typeof ListView.DataSource;
 
 export default class ComponentList extends Component {
     static navigationOptions = {
-        header: {
-            title: 'Components',
-        },
+        title: 'Components',
     };
 
-    props: ComponentListProps;
+    props: Props;
 
     state: { dataSource: DataSource };
 
     dataSource: DataSource;
 
-    constructor(props: ComponentListProps) {
+    constructor(props: Props) {
         super(props);
 
         this.dataSource = new ListView.DataSource({
             rowHasChanged: (r1, r2) => r1 !== r2,
         });
 
+        const { state: { params } } = props.navigation;
+
         this.state = {
-            dataSource: this.dataSource.cloneWithRows(props.components),
+            dataSource: this.dataSource.cloneWithRows(params.components),
         };
     }
 
@@ -42,11 +48,7 @@ export default class ComponentList extends Component {
         <ComponentRow
             title={props.displayName}
             description={props.description}
-            onPress={() =>
-                this.props.navigate('demo', {
-                    ...props,
-                    navigate: this.props.navigate,
-                })}
+            onPress={() => this.props.navigation.navigate('demo', props)}
         />
     );
 

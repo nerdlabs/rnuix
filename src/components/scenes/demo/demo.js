@@ -11,23 +11,35 @@ const navigate = (route: string, params?: any) => {
 
 const noDemos = {
     navigate,
-    demos: [],
+    state: {
+        params: {
+            demos: [],
+        },
+    },
 };
 const oneDemo = {
     navigate,
-    demos: [
-        {
-            title: 'This is a demo',
-            render: () => <Text>Demo</Text>,
+    state: {
+        params: {
+            demos: [
+                {
+                    title: 'This is a demo',
+                    render: () => <Text>Demo</Text>,
+                },
+            ],
         },
-    ],
+    },
 };
 const manyDemos = {
     navigate,
-    demos: Array.from({ length: 8 }).map((_, i) => ({
-        title: `A demo #${i}`,
-        render: () => <Text>Demo #{i}</Text>,
-    })),
+    state: {
+        params: {
+            demos: Array.from({ length: 8 }).map((_, i) => ({
+                title: `A demo #${i}`,
+                render: () => <Text>Demo #{i}</Text>,
+            })),
+        },
+    },
 };
 
 import Demo from './';
@@ -38,15 +50,15 @@ export default {
     demos: [
         {
             title: 'No demos',
-            render: () => <Demo {...noDemos} />,
+            render: () => <Demo navigation={noDemos} />,
         },
         {
             title: 'One demo',
-            render: () => <Demo {...oneDemo} />,
+            render: () => <Demo navigation={oneDemo} />,
         },
         {
             title: 'Many demos',
-            render: () => <Demo {...manyDemos} />,
+            render: () => <Demo navigation={manyDemos} />,
         },
     ],
 };
