@@ -1,7 +1,6 @@
 {
 	"name": "rnuix",
-	"version": "0.0.1",
-	"private": true,
+	"version": "1.0.0",
 	"main": "./src/index.js",
 	"bin": "./bin/rnuix.js",
 	"scripts": {
