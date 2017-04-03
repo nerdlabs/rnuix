@@ -33,15 +33,15 @@ const styles = StyleSheet.create({
         backgroundColor: colors.white,
         borderBottomColor: colors.silver,
         borderBottomWidth: 1,
-        padding: 10,
+        padding: 16,
     },
     displayName: {
         color: colors.black,
-        fontWeight: 'bold',
-        marginBottom: 3,
+        fontSize: 16,
+        marginBottom: 2,
     },
     description: {
         color: colors.gray,
-        fontSize: 12,
+        fontSize: 14,
     },
 });

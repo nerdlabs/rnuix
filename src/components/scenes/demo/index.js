@@ -22,6 +22,7 @@ type DataSource = typeof ListView.DataSource;
 export default class Demo extends Component {
     static navigationOptions = {
         title: ({ state: { params } }) => params.displayName,
+        header: { backTitle: null },
     };
 
     props: Props;
@@ -70,9 +71,9 @@ export default class Demo extends Component {
 
 const styles = StyleSheet.create({
     scene: {
-        padding: 10,
+        padding: 6,
     },
     demo: {
-        marginBottom: 10,
+        marginBottom: 6,
     },
 });

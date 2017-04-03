@@ -27,6 +27,7 @@ export default function FullScreenDemo(
 
 FullScreenDemo.navigationOptions = {
     title: ({ state: { params } }) => params.title,
+    header: { backTitle: null },
 };
 
 const styles = StyleSheet.create({
