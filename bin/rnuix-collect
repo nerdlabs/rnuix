@@ -61,7 +61,7 @@ function resolvePath(path) {
 
 function globDemos(path) {
     return glob(path + demoPattern, {
-        ignore: ['node_modules/**/*', 'android/**/*', 'ios/**/*', '.*'],
+        ignore: ['**/node_modules/**/*', './android/**/*', './ios/**/*', '.*'],
     });
 }
 
