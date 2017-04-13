@@ -34,9 +34,9 @@ export default {
             render: () => (
                 <ComponentList
                     navigation={{
-                        state: { params: { components: noComponents } },
                         navigate,
                     }}
+                    screenProps={{ components: noComponents }}
                 />
             ),
         },
@@ -45,9 +45,9 @@ export default {
             render: () => (
                 <ComponentList
                     navigation={{
-                        state: { params: { components: oneComponent } },
                         navigate,
                     }}
+                    screenProps={{ components: oneComponent }}
                 />
             ),
         },
@@ -56,9 +56,9 @@ export default {
             render: () => (
                 <ComponentList
                     navigation={{
-                        state: { params: { components: manyComponents } },
                         navigate,
                     }}
+                    screenProps={{ components: manyComponents }}
                 />
             ),
         },

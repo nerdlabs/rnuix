@@ -9,11 +9,9 @@ import type { Component as ComponentT } from '../../../../type-definitions';
 export type Props = {
     navigation: {
         navigate: (route: string, params?: any) => void,
-        state: {
-            params: {
-                components: ComponentT[],
-            },
-        },
+    },
+    screenProps: {
+        components: ComponentT[],
     },
 };
 type RenderRowProps = ComponentT;
@@ -38,10 +36,10 @@ export default class ComponentList extends Component {
             rowHasChanged: (r1, r2) => r1 !== r2,
         });
 
-        const { state: { params } } = props.navigation;
+        const { components } = props.screenProps;
 
         this.state = {
-            dataSource: this.dataSource.cloneWithRows(params.components),
+            dataSource: this.dataSource.cloneWithRows(components),
         };
     }
 
