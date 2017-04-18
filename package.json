@@ -17,7 +17,7 @@
 		"commander": "2.9.0",
 		"denodeify": "1.2.1",
 		"glob": "7.1.1",
-		"react-navigation": "1.0.0-beta.7"
+		"react-navigation": "react-community/react-navigation#970/head"
 	},
 	"peerDependencies": {
 		"react": ">=15.4.0-rc.4 <= 15.4.2",
@@ -27,7 +27,7 @@
 		"babel-jest": "19.0.0",
 		"babel-plugin-transform-flow-strip-types": "6.22.0",
 		"babel-preset-react-native": "1.9.1",
-		"flow-bin": "0.38.0",
+		"flow-bin": "0.39.0",
 		"husky": "0.13.3",
 		"jest": "19.0.2",
 		"prettier": "0.22.0",
