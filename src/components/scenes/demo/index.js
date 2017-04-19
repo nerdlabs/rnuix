@@ -20,10 +20,10 @@ type RenderRowProps = ComponentT;
 type DataSource = typeof ListView.DataSource;
 
 export default class Demo extends Component {
-    static navigationOptions = {
-        title: ({ state: { params } }) => params.displayName,
-        header: { backTitle: null },
-    };
+    static navigationOptions = ({ navigation }) => ({
+        title: navigation.state.params.displayName,
+        headerBackTitle: null,
+    });
 
     props: Props;
 

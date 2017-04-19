@@ -1,6 +1,6 @@
 {
 	"name": "rnuix",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"main": "./src/index.js",
 	"bin": "./bin/rnuix",
 	"scripts": {
@@ -17,7 +17,7 @@
 		"commander": "2.9.0",
 		"denodeify": "1.2.1",
 		"glob": "7.1.1",
-		"react-navigation": "react-community/react-navigation#970/head"
+		"react-navigation": "react-community/react-navigation#2bbfc03"
 	},
 	"peerDependencies": {
 		"react": ">=15.4.0-rc.4 <= 15.4.2",
