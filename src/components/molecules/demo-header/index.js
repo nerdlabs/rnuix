@@ -7,7 +7,6 @@ import Icon from '../../atoms/icon';
 import Touchable from '../../atoms/touchable';
 
 export type DemoHeaderProps = {
-    isFullScreen?: boolean,
     onEnterFullScreen?: () => void,
     onExitFullScreen?: () => void,
     title: string,
@@ -27,15 +26,8 @@ export default function DemoHeader(
                 <Text style={styles.titleText}>{title}</Text>
             </View>
             <View style={styles.buttons}>
-                <Touchable
-                    style={styles.button}
-                    onPress={
-                        isFullScreen ? onExitFullScreen : onEnterFullScreen
-                    }
-                >
-                    <Icon
-                        name={isFullScreen ? 'fullscreen-exit' : 'fullscreen'}
-                    />
+                <Touchable style={styles.button} onPress={onEnterFullScreen}>
+                    <Icon name="fullscreen" />
                 </Touchable>
             </View>
         </View>

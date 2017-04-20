@@ -27,7 +27,6 @@ export default function DemoTile(
             {isFullScreen
                 ? null
                 : <DemoHeader
-                      isFullScreen={isFullScreen}
                       onEnterFullScreen={onEnterFullScreen}
                       onExitFullScreen={onExitFullScreen}
                       title={title}

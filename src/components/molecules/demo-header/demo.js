@@ -21,9 +21,5 @@ export default {
                 <DemoHeader title="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod" />
             ),
         },
-        {
-            title: 'Full screen mode',
-            render: () => <DemoHeader title="title" isFullScreen />,
-        },
     ],
 };
