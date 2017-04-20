@@ -12,5 +12,5 @@ export default function Icon({ name }: IconProps) {
 
 const icons = {
     fullscreen: require('./assets/ic_fullscreen.png'),
-    'fullscreen-exit': require('./assets/ic_fullscreen_exit.png'),
+    close: require('./assets/ic_close.png'),
 };

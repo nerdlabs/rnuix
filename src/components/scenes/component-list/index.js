@@ -1,9 +1,11 @@
 // @flow
 import React, { Component } from 'react';
-import { ListView, StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { ListView, StyleSheet } from 'react-native';
 
 import { colors } from '../../../themes';
 import ComponentRow from '../../molecules/component-row';
+import Icon from '../../atoms/icon';
+import Touchable from '../../atoms/touchable';
 import type { Component as ComponentT } from '../../../../type-definitions';
 
 export type Props = {
@@ -12,17 +14,21 @@ export type Props = {
     },
     screenProps: {
         components: ComponentT[],
+        onExit?: () => void,
     },
 };
 type RenderRowProps = ComponentT;
 type DataSource = typeof ListView.DataSource;
 
 export default class ComponentList extends Component {
-    static navigationOptions = {
+    static navigationOptions = ({ navigation, screenProps }) => ({
         title: 'Components',
         headerBackTitle: null,
-    };
-
+        headerLeft: screenProps.onExit &&
+            <Touchable onPress={screenProps.onExit} style={styles.exitButton}>
+                <Icon name="close" />
+            </Touchable>,
+    });
     props: Props;
 
     state: { dataSource: DataSource };
@@ -61,3 +67,9 @@ export default class ComponentList extends Component {
         );
     }
 }
+
+const styles = StyleSheet.create({
+    exitButton: {
+        padding: 16,
+    },
+});

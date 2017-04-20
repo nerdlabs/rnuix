@@ -12,8 +12,8 @@ export default {
             render: () => <Icon name="fullscreen" />,
         },
         {
-            title: 'Exit fullscreen',
-            render: () => <Icon name="fullscreen-exit" />,
+            title: 'Close',
+            render: () => <Icon name="close" />,
         },
     ],
 };
