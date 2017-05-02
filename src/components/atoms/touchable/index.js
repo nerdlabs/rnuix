@@ -7,10 +7,8 @@ import {
     TouchableOpacity,
     View,
 } from 'react-native';
-import type Children from 'react-native';
 
 type StyledTouchableNativeFeedbackProps = typeof TouchableNativeFeedback & {
-    children?: Children,
     style?: StyleSheet.Style,
 };
 
@@ -30,12 +28,7 @@ function StyledTouchableNativeFeedback(
     );
 }
 
-type TouchableProps = typeof TouchableNativeFeedback & typeof TouchableOpacity & {
-    children?: Children,
-    disabled?: boolean,
-    onPress?: () => void,
-    onLongPress?: () => void,
-};
+type TouchableProps = typeof TouchableNativeFeedback & typeof TouchableOpacity;
 
 export default function Touchable(
     {
