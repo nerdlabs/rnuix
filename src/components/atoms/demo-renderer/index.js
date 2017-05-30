@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, ScrollView } from 'react-native';
 
 import { colors } from '../../../themes';
 
@@ -16,28 +16,27 @@ export default function DemoRenderer(
     }: DemoRendererProps,
 ) {
     return (
-        <View
+        <ScrollView
             style={[
                 styles.demo,
                 isFullScreen ? styles.fullScreen : styles.tile,
             ]}
         >
             {render()}
-        </View>
+        </ScrollView>
     );
 }
 
 const styles = StyleSheet.create({
     demo: {
         backgroundColor: colors.white,
-        padding: 10,
     },
     fullScreen: {
         flex: 1,
-        padding: 0,
     },
     tile: {
         borderBottomLeftRadius: 3,
         borderBottomRightRadius: 3,
+        padding: 10,
     },
 });
