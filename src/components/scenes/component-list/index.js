@@ -25,7 +25,12 @@ export default class ComponentList extends Component {
         title: 'Components',
         headerBackTitle: null,
         headerLeft: screenProps.onExit &&
-            <Touchable onPress={screenProps.onExit} style={styles.exitButton}>
+            <Touchable
+                onPress={screenProps.onExit}
+                style={styles.exitButton}
+                borderless
+                rippleColor="rgba(0, 0, 0, 0.32)"
+            >
                 <Icon name="close" />
             </Touchable>,
     });

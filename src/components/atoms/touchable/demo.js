@@ -23,6 +23,8 @@ export default {
             render: () => (
                 <Touchable
                     onPress={() => {}}
+                    activeOpacity={0.5}
+                    rippleColor="#fff6"
                     style={{
                         backgroundColor: '#78c',
                         borderRadius: 3,

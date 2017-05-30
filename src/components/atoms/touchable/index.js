@@ -9,18 +9,25 @@ import {
 } from 'react-native';
 
 type StyledTouchableNativeFeedbackProps = typeof TouchableNativeFeedback & {
+    borderless?: boolean,
+    rippleColor?: string,
     style?: StyleSheet.Style,
 };
 
 function StyledTouchableNativeFeedback(
     {
+        borderless,
+        rippleColor,
         children,
         style,
         ...props
     }: StyledTouchableNativeFeedbackProps,
 ) {
     return (
-        <TouchableNativeFeedback {...props}>
+        <TouchableNativeFeedback
+            background={TouchableNativeFeedback.Ripple(rippleColor, borderless)}
+            {...props}
+        >
             <View style={style}>
                 {children}
             </View>
@@ -28,7 +35,7 @@ function StyledTouchableNativeFeedback(
     );
 }
 
-type TouchableProps = typeof TouchableNativeFeedback & typeof TouchableOpacity;
+type TouchableProps = typeof TouchableOpacity & StyledTouchableNativeFeedbackProps;
 
 export default function Touchable(
     {
@@ -39,7 +46,7 @@ export default function Touchable(
         ...props
     }: TouchableProps,
 ) {
-    const Touchable = Platform.OS === 'android'
+    const Touchable = Platform.OS === 'android' && Platform.Version >= 21
         ? StyledTouchableNativeFeedback
         : TouchableOpacity;
     const Wrapper = !disabled && (onLongPress || onPress) ? Touchable : View;
