@@ -12,6 +12,7 @@ export default function Icon({ name, tintColor }: IconProps) {
 }
 
 const icons = {
-    fullscreen: require('./assets/ic_fullscreen.png'),
+    arrow_back: require('./assets/ic_arrow_back.png'),
     close: require('./assets/ic_close.png'),
+    fullscreen: require('./assets/ic_fullscreen.png'),
 };

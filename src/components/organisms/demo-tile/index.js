@@ -33,7 +33,7 @@ export default function DemoTile(
                       ? <FloatingButton
                             onPress={onExitFullScreen}
                             style={styles.exitButton}
-                            name="close"
+                            name="arrow_back"
                         />
                       : null
                 : <DemoHeader

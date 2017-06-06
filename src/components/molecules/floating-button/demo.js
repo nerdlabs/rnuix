@@ -10,13 +10,13 @@ export default {
     demos: [
         {
             title: 'Default',
-            render: () => <FloatingButton name="close" />,
+            render: () => <FloatingButton name="arrow_back" />,
         },
         {
             title: 'Custom style',
             render: () => (
                 <FloatingButton
-                    name="fullscreen"
+                    name="close"
                     style={{ backgroundColor: colors.blue }}
                 />
             ),

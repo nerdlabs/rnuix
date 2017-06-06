@@ -8,12 +8,16 @@ export default {
     description: 'Renders an icon',
     demos: [
         {
-            title: 'Fullscreen',
-            render: () => <Icon name="fullscreen" />,
+            title: 'Arrow Back',
+            render: () => <Icon name="arrow_back" />,
         },
         {
             title: 'Close',
             render: () => <Icon name="close" />,
+        },
+        {
+            title: 'Fullscreen',
+            render: () => <Icon name="fullscreen" />,
         },
     ],
 };
