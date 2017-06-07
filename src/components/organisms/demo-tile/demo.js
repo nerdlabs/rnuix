@@ -49,6 +49,10 @@ export default {
                 />
             ),
             hideHeader: true,
+            exitButtonStyle: {
+                left: null,
+                right: 20,
+            },
         },
     ],
 };

@@ -23,6 +23,7 @@ export default function FullScreenDemo({ navigation }: Props) {
             render={props.render}
             isFullScreen
             hideHeader={props.hideHeader}
+            exitButtonStyle={props.exitButtonStyle}
             onExitFullScreen={() => navigation.goBack()}
         />
     );

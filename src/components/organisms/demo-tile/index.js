@@ -13,6 +13,7 @@ export type DemoTileProps = DemoHeaderProps & DemoRendererProps & {
     onExitFullScreen?: () => void,
     hideHeader?: boolean,
     style?: StyleSheet.Style,
+    exitButtonStyle?: StyleSheet.Style,
 };
 
 export default function DemoTile(
@@ -24,6 +25,7 @@ export default function DemoTile(
         onExitFullScreen,
         style,
         title,
+        exitButtonStyle,
     }: DemoTileProps,
 ) {
     return (
@@ -32,7 +34,7 @@ export default function DemoTile(
                 ? hideHeader
                       ? <FloatingButton
                             onPress={onExitFullScreen}
-                            style={styles.exitButton}
+                            style={[styles.exitButton, exitButtonStyle]}
                             name="arrow_back"
                         />
                       : null
