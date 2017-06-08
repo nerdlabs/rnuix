@@ -19,6 +19,7 @@ export default function DemoTile({
     onEnterFullScreen,
     style,
     title,
+    navigation,
 }: DemoTileProps) {
     return (
         <View style={[isFullScreen ? null : styles.container, style]}>
@@ -28,7 +29,11 @@ export default function DemoTile({
                       onEnterFullScreen={onEnterFullScreen}
                       title={title}
                   />}
-            <DemoRenderer render={render} isFullScreen={isFullScreen} />
+            <DemoRenderer
+                render={render}
+                isFullScreen={isFullScreen}
+                navigation={navigation}
+            />
         </View>
     );
 }
