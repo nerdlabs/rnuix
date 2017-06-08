@@ -14,15 +14,13 @@ type StyledTouchableNativeFeedbackProps = TouchableNativeFeedback.props & {
     style?: StyleSheet.Style,
 };
 
-function StyledTouchableNativeFeedback(
-    {
-        borderless,
-        rippleColor,
-        children,
-        style,
-        ...props
-    }: StyledTouchableNativeFeedbackProps,
-) {
+function StyledTouchableNativeFeedback({
+    borderless,
+    rippleColor,
+    children,
+    style,
+    ...props
+}: StyledTouchableNativeFeedbackProps) {
     return (
         <TouchableNativeFeedback
             background={TouchableNativeFeedback.Ripple(rippleColor, borderless)}
@@ -35,17 +33,16 @@ function StyledTouchableNativeFeedback(
     );
 }
 
-export type TouchableProps = TouchableOpacity.props & StyledTouchableNativeFeedbackProps;
+export type TouchableProps = TouchableOpacity.props &
+    StyledTouchableNativeFeedbackProps;
 
-export default function Touchable(
-    {
-        children,
-        disabled,
-        onLongPress,
-        onPress,
-        ...props
-    }: TouchableProps,
-) {
+export default function Touchable({
+    children,
+    disabled,
+    onLongPress,
+    onPress,
+    ...props
+}: TouchableProps) {
     const Touchable = Platform.OS === 'android' && Platform.Version >= 21
         ? StyledTouchableNativeFeedback
         : TouchableOpacity;

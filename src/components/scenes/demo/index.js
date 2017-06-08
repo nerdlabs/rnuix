@@ -45,15 +45,14 @@ export default class Demo extends Component {
         };
     }
 
-    renderRow = (props: RenderRowProps) => (
+    renderRow = (props: RenderRowProps) =>
         <DemoTile
             style={styles.demo}
             title={props.title}
             render={props.render}
             onEnterFullScreen={() =>
                 this.props.navigation.navigate('fullScreen', props)}
-        />
-    );
+        />;
 
     render() {
         return (

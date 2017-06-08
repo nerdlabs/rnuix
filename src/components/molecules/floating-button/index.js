@@ -7,9 +7,12 @@ import Icon, { type IconProps } from '../../atoms/icon';
 
 export type FloatingButtonProps = TouchableOpacity.props & IconProps;
 
-export default function FloatingButton(
-    { style, name, tintColor = colors.white, ...props }: FloatingButtonProps,
-) {
+export default function FloatingButton({
+    style,
+    name,
+    tintColor = colors.white,
+    ...props
+}: FloatingButtonProps) {
     return (
         <TouchableOpacity
             activeOpacity={0.7}

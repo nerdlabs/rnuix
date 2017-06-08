@@ -23,5 +23,5 @@ export {
     default as ExitFullScreenFAB,
 } from './components/organisms/exit-full-screen-fab';
 
-export default (components: ComponentT[] = []) =>
-    () => <App screenProps={{ components }} />;
+export default (components: ComponentT[] = []) => () =>
+    <App screenProps={{ components }} />;

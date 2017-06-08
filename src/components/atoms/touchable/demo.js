@@ -7,13 +7,15 @@ import Touchable from './';
 
 export default {
     displayName: 'Touchable',
-    description: 'Renders a TouchableNativeFeedback on Android, otherwise a TouchableOpacity.',
+    description:
+        'Renders a TouchableNativeFeedback on Android, otherwise a TouchableOpacity.',
     demos: [
         {
             title: 'Text content',
-            render: () => (
-                <Touchable onPress={() => {}}><Text>Touch me!</Text></Touchable>
-            ),
+            render: () =>
+                <Touchable onPress={() => {}}>
+                    <Text>Touch me!</Text>
+                </Touchable>,
         },
         {
             title: 'No onPress disables feedback',
@@ -21,7 +23,7 @@ export default {
         },
         {
             title: 'Custom style',
-            render: () => (
+            render: () =>
                 <Touchable
                     onPress={() => {}}
                     activeOpacity={0.5}
@@ -31,12 +33,11 @@ export default {
                     <Text style={styles.customText}>
                         Touch me!
                     </Text>
-                </Touchable>
-            ),
+                </Touchable>,
         },
         {
             title: 'Custom style, disabled',
-            render: () => (
+            render: () =>
                 <Touchable
                     disabled
                     onPress={() => {}}
@@ -45,8 +46,7 @@ export default {
                     <Text style={styles.customText}>
                         Can't touch this
                     </Text>
-                </Touchable>
-            ),
+                </Touchable>,
         },
     ],
 };

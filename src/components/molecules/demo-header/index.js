@@ -11,12 +11,10 @@ export type DemoHeaderProps = {
     title: string,
 };
 
-export default function DemoHeader(
-    {
-        onEnterFullScreen,
-        title,
-    }: DemoHeaderProps,
-) {
+export default function DemoHeader({
+    onEnterFullScreen,
+    title,
+}: DemoHeaderProps) {
     return (
         <View style={styles.header}>
             <View style={styles.title}>

@@ -10,7 +10,7 @@ export default {
     demos: [
         {
             title: 'Example',
-            render: () => (
+            render: () =>
                 <FullScreenDemo
                     navigation={{
                         state: {
@@ -20,8 +20,7 @@ export default {
                             },
                         },
                     }}
-                />
-            ),
+                />,
         },
     ],
 };

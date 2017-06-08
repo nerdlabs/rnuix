@@ -6,7 +6,8 @@ import FloatingButton from './';
 
 export default {
     displayName: 'FloatingButton',
-    description: 'Renders a rounded button appropriate for primary screen actions.',
+    description:
+        'Renders a rounded button appropriate for primary screen actions.',
     demos: [
         {
             title: 'Default',
@@ -14,22 +15,20 @@ export default {
         },
         {
             title: 'Custom style',
-            render: () => (
+            render: () =>
                 <FloatingButton
                     name="close"
                     style={{ backgroundColor: colors.blue }}
-                />
-            ),
+                />,
         },
         {
             title: 'Custom style and tintColor',
-            render: () => (
+            render: () =>
                 <FloatingButton
                     name="fullscreen"
                     tintColor={colors.black}
                     style={{ backgroundColor: colors.silverLight }}
-                />
-            ),
+                />,
         },
     ],
 };

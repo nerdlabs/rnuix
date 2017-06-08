@@ -24,20 +24,21 @@ export default class ComponentList extends Component {
     static navigationOptions = ({ navigation, screenProps }) => ({
         title: 'Components',
         headerBackTitle: null,
-        headerLeft: screenProps.onExit &&
-            <Touchable
-                onPress={screenProps.onExit}
-                style={styles.exitButton}
-                borderless
-                rippleColor="rgba(0, 0, 0, 0.32)"
-            >
-                <Icon
-                    name="close"
-                    tintColor={
-                        Platform.OS === 'ios' ? colors.blue : colors.black
-                    }
-                />
-            </Touchable>,
+        headerLeft:
+            screenProps.onExit &&
+                <Touchable
+                    onPress={screenProps.onExit}
+                    style={styles.exitButton}
+                    borderless
+                    rippleColor="rgba(0, 0, 0, 0.32)"
+                >
+                    <Icon
+                        name="close"
+                        tintColor={
+                            Platform.OS === 'ios' ? colors.blue : colors.black
+                        }
+                    />
+                </Touchable>,
     });
     props: Props;
 
@@ -59,13 +60,12 @@ export default class ComponentList extends Component {
         };
     }
 
-    renderRow = (props: RenderRowProps) => (
+    renderRow = (props: RenderRowProps) =>
         <ComponentRow
             title={props.displayName}
             description={props.description}
             onPress={() => this.props.navigation.navigate('demo', props)}
-        />
-    );
+        />;
 
     render() {
         return (

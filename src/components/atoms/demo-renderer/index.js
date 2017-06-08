@@ -9,12 +9,10 @@ export type DemoRendererProps = {
     render: () => React.Element<*>,
 };
 
-export default function DemoRenderer(
-    {
-        isFullScreen,
-        render,
-    }: DemoRendererProps,
-) {
+export default function DemoRenderer({
+    isFullScreen,
+    render,
+}: DemoRendererProps) {
     return (
         <ScrollView
             style={isFullScreen && styles.fullScreen}

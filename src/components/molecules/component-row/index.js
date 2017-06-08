@@ -12,14 +12,12 @@ export type ComponentRowProps = {
     style?: StyleSheet.Style,
 };
 
-export default function ComponentRow(
-    {
-        title,
-        description,
-        onPress,
-        style,
-    }: ComponentRowProps,
-) {
+export default function ComponentRow({
+    title,
+    description,
+    onPress,
+    style,
+}: ComponentRowProps) {
     return (
         <Touchable onPress={onPress} style={[styles.row, style]}>
             <Text style={styles.displayName}>{title}</Text>

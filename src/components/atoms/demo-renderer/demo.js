@@ -14,12 +14,11 @@ export default {
         },
         {
             title: 'Full screen mode',
-            render: () => (
+            render: () =>
                 <DemoRenderer
                     isFullScreen
                     render={() => <Text>Content</Text>}
-                />
-            ),
+                />,
         },
     ],
 };
