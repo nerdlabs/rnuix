@@ -28,12 +28,13 @@ export default function FullScreenDemo({ navigation }: Props) {
 
 FullScreenDemo.navigationOptions = props => {
     const { params } = props.navigation.state;
-    if (typeof params.renderHeader === 'function') {
+    const { renderHeader } = params;
+    if (typeof renderHeader === 'function') {
         return {
-            header: params.renderHeader(props),
+            header: renderHeader(props),
         };
     }
-    if (params.renderHeader === null) {
+    if (renderHeader === null || renderHeader === false) {
         return {
             header: null,
         };
