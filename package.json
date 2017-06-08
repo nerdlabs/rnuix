@@ -13,24 +13,24 @@
 		"prepush": "npm run test"
 	},
 	"dependencies": {
-		"chokidar": "1.6.1",
+		"chokidar": "1.7.0",
 		"commander": "2.9.0",
 		"denodeify": "1.2.1",
-		"glob": "7.1.1",
-		"react-navigation": "1.0.0-beta.9"
+		"glob": "7.1.2",
+		"react-navigation": "1.0.0-beta.11"
 	},
 	"peerDependencies": {
 		"react": ">=15.4.0-rc.4 <= 15.4.2",
 		"react-native": ">=0.39.0 <= 0.42.3"
 	},
 	"devDependencies": {
-		"babel-jest": "19.0.0",
+		"babel-jest": "20.0.3",
 		"babel-plugin-transform-flow-strip-types": "6.22.0",
-		"babel-preset-react-native": "1.9.1",
+		"babel-preset-react-native": "1.9.2",
 		"flow-bin": "0.39.0",
-		"husky": "0.13.3",
-		"jest": "19.0.2",
-		"prettier": "0.22.0",
+		"husky": "0.13.4",
+		"jest": "20.0.4",
+		"prettier": "1.4.4",
 		"react": "15.4.2",
 		"react-native": "0.42.3",
 		"react-test-renderer": "15.4.2"

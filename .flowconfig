@@ -14,11 +14,8 @@
 .*/Libraries/react-native/React.js
 .*/Libraries/react-native/ReactNative.js
 
-
-; custom additions
-
-.*/node_modules/react-navigation/examples
-.*/node_modules/react-navigation/website
+; Custom additions
+.*/node_modules/react-navigation/src/routers/__tests__/StackRouter-test.js
 
 [include]
 
