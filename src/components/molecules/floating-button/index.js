@@ -1,37 +1,50 @@
 // @flow
 import React from 'react';
-import { StyleSheet, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import type { StyleObj } from 'StyleSheetTypes';
 
 import { colors, mixins } from '../../../themes';
 import Icon, { type IconProps } from '../../atoms/icon';
+import Touchable, { type TouchableProps } from '../../atoms/touchable';
 
-export type FloatingButtonProps = TouchableOpacity.props & IconProps;
+export type FloatingButtonProps = TouchableProps &
+    IconProps & {
+        buttonStyle?: StyleObj,
+    };
 
 export default function FloatingButton({
     style,
+    buttonStyle,
     name,
     tintColor = colors.white,
     ...props
 }: FloatingButtonProps) {
     return (
-        <TouchableOpacity
-            activeOpacity={0.7}
-            style={[styles.container, style]}
-            {...props}
-        >
-            <Icon name={name} tintColor={tintColor} />
-        </TouchableOpacity>
+        <View style={[styles.container, styles.rounded, style]}>
+            <Touchable
+                activeOpacity={0.7}
+                borderless
+                style={[styles.button, styles.rounded, buttonStyle]}
+                {...props}
+            >
+                <Icon name={name} tintColor={tintColor} />
+            </Touchable>
+        </View>
     );
 }
 
 const styles = StyleSheet.create({
-    container: {
-        alignItems: 'center',
-        justifyContent: 'center',
+    rounded: {
+        borderRadius: 28,
         width: 56,
         height: 56,
-        borderRadius: 28,
-        backgroundColor: colors.red,
+    },
+    container: {
         ...mixins.elevation(6),
+    },
+    button: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: colors.red,
     },
 });

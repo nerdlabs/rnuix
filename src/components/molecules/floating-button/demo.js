@@ -11,14 +11,16 @@ export default {
     demos: [
         {
             title: 'Default',
-            render: () => <FloatingButton name="arrow_back" />,
+            render: () =>
+                <FloatingButton name="arrow_back" onPress={() => {}} />,
         },
         {
             title: 'Custom style',
             render: () =>
                 <FloatingButton
                     name="close"
-                    style={{ backgroundColor: colors.blue }}
+                    buttonStyle={{ backgroundColor: colors.blue }}
+                    onPress={() => {}}
                 />,
         },
         {
@@ -27,7 +29,8 @@ export default {
                 <FloatingButton
                     name="fullscreen"
                     tintColor={colors.black}
-                    style={{ backgroundColor: colors.silverLight }}
+                    buttonStyle={{ backgroundColor: colors.silverLight }}
+                    onPress={() => {}}
                 />,
         },
     ],
