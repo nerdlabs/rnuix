@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DemoTile renders default 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#fff",
+        "borderRadius": 3,
+        "shadowOffset": Object {
+          "height": 1.2,
+        },
+        "shadowOpacity": 0.183,
+        "shadowRadius": 1.08,
+      },
+      undefined,
+    ]
+  }
+>
+  <DemoHeader
+    onEnterFullScreen={undefined}
+    title="Foo"
+  />
+  <DemoRenderer
+    isFullScreen={false}
+    render={[Function]}
+  />
+</View>
+`;
+
+exports[`DemoTile renders fullscreen 1`] = `
+<View
+  style={
+    Array [
+      null,
+      undefined,
+    ]
+  }
+>
+  <DemoRenderer
+    isFullScreen={true}
+    render={[Function]}
+  />
+</View>
+`;
