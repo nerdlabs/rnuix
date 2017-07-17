@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Touchable renders a TouchableOpacity by default if onLongPress is provided 1`] = `
+<TouchableOpacity
+  activeOpacity={0.2}
+  focusedOpacity={0.7}
+  onLongPress={[Function]}
+  onPress={undefined}
+/>
+`;
+
+exports[`Touchable renders a TouchableOpacity by default if onPress is provided 1`] = `
+<TouchableOpacity
+  activeOpacity={0.2}
+  focusedOpacity={0.7}
+  onLongPress={undefined}
+  onPress={[Function]}
+/>
+`;
+
+exports[`Touchable renders a View and no Touchable* if no onPress is provided 1`] = `
+<View
+  onLongPress={undefined}
+  onPress={undefined}
+/>
+`;
+
+exports[`Touchable renders a View if onPress and disabled are provided 1`] = `
+<View
+  onLongPress={undefined}
+  onPress={[Function]}
+/>
+`;
