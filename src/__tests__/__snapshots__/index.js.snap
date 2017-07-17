@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App renders with demos 1`] = `
+<NavigationContainer
+  screenProps={
+    Object {
+      "components": Array [
+        Object {
+          "demos": Array [
+            Object {
+              "render": [Function],
+              "title": "Demo 1a",
+            },
+            Object {
+              "render": [Function],
+              "title": "Demo 1b",
+            },
+          ],
+          "description": "Description 1",
+          "displayName": "DisplayName 1",
+        },
+        Object {
+          "demos": Array [
+            Object {
+              "render": [Function],
+              "title": "Demo 2a",
+            },
+            Object {
+              "render": [Function],
+              "title": "Demo 2b",
+            },
+          ],
+          "description": "Description 2",
+          "displayName": "DisplayName 2",
+        },
+      ],
+    }
+  }
+/>
+`;
+
+exports[`App renders without demos 1`] = `
+<NavigationContainer
+  screenProps={
+    Object {
+      "components": Array [],
+    }
+  }
+/>
+`;
