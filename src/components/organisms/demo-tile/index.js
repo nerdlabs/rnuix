@@ -11,7 +11,6 @@ import DemoHeader, { type DemoHeaderProps } from '../../molecules/demo-header';
 
 export type DemoTileProps = DemoHeaderProps &
     DemoRendererProps & {
-        hideHeader?: boolean,
         onExitFullScreen?: () => void,
         style?: StyleObj,
     };
@@ -19,7 +18,6 @@ export type DemoTileProps = DemoHeaderProps &
 export default function DemoTile({
     render,
     isFullScreen = false,
-    hideHeader = false,
     onEnterFullScreen,
     style,
     title,
