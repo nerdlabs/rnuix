@@ -55,3 +55,6 @@ jsconfig.json
 fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots
+
+# coverage
+coverage/
