@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import { StyleSheet, Text } from 'react-native';
-import type { StyleObj } from 'StyleSheetTypes';
+import type { StyleObj } from 'react-native/Libraries/StyleSheet/StyleSheetTypes';
 
 import { colors } from '../../../themes';
 import Touchable from '../../atoms/touchable';

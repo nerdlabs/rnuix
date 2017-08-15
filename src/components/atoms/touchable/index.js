@@ -7,7 +7,7 @@ import {
     TouchableOpacity,
     View,
 } from 'react-native';
-import type { StyleObj } from 'StyleSheetTypes';
+import type { StyleObj } from 'react-native/Libraries/StyleSheet/StyleSheetTypes';
 
 type StyledTouchableNativeFeedbackProps = TouchableNativeFeedback.props & {
     borderless?: boolean,

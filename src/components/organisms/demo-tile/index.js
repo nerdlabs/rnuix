@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import type { StyleObj } from 'StyleSheetTypes';
+import type { StyleObj } from 'react-native/Libraries/StyleSheet/StyleSheetTypes';
 
 import { colors, mixins } from '../../../themes';
 import DemoRenderer, {
