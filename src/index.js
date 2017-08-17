@@ -1,8 +1,8 @@
 // @flow
-import React, { Component } from 'react';
+import React from 'react';
 import { StackNavigator } from 'react-navigation';
 
-import type { Component as ComponentT } from '../type-definitions';
+import type { Component } from '../type-definitions';
 
 import ComponentList from './components/scenes/component-list';
 import Demo from './components/scenes/demo';
@@ -23,5 +23,5 @@ export {
     default as ExitFullScreenFAB,
 } from './components/organisms/exit-full-screen-fab';
 
-export default (components: ComponentT[] = []) => () =>
+export default (components: Component[] = []) => () =>
     <App screenProps={{ components }} />;

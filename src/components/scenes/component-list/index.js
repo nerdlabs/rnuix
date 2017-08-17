@@ -1,26 +1,26 @@
 // @flow
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { ListView, Platform, StyleSheet } from 'react-native';
 
 import { colors } from '../../../themes';
 import ComponentRow from '../../molecules/component-row';
 import Icon from '../../atoms/icon';
 import Touchable from '../../atoms/touchable';
-import type { Component as ComponentT } from '../../../../type-definitions';
+import type { Component } from '../../../../type-definitions';
 
 export type Props = {
     navigation: {
         navigate: (route: string, params?: any) => void,
     },
     screenProps: {
-        components: ComponentT[],
+        components: Component[],
         onExit?: () => void,
     },
 };
-type RenderRowProps = ComponentT;
+type RenderRowProps = Component;
 type DataSource = typeof ListView.DataSource;
 
-export default class ComponentList extends Component {
+export default class ComponentList extends PureComponent {
     static navigationOptions = ({ navigation, screenProps }) => ({
         title: 'Components',
         headerBackTitle: null,

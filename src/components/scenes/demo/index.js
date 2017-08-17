@@ -1,25 +1,25 @@
 // @flow
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { Image, ListView, StyleSheet, Text, View } from 'react-native';
 
 import { colors } from '../../../themes';
 import DemoTile from '../../organisms/demo-tile';
-import type { Component as ComponentT } from '../../../../type-definitions';
+import type { Component } from '../../../../type-definitions';
 
 export type Props = {
     navigation: {
         navigate: (route: string, params?: any) => void,
         state: {
             params: {
-                demos: ComponentT[],
+                demos: Component[],
             },
         },
     },
 };
-type RenderRowProps = ComponentT;
+type RenderRowProps = Component;
 type DataSource = typeof ListView.DataSource;
 
-export default class Demo extends Component {
+export default class Demo extends PureComponent {
     static navigationOptions = ({ navigation }) => ({
         title: navigation.state.params.displayName,
         headerBackTitle: null,
