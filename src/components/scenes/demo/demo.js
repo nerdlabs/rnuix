@@ -36,10 +36,7 @@ const manyDemos = {
         params: {
             demos: Array.from({ length: 8 }).map((_, i) => ({
                 title: `A demo #${i}`,
-                render: () =>
-                    <Text>
-                        Demo #{i}
-                    </Text>,
+                render: () => <Text>Demo #{i}</Text>,
             })),
         },
     },

@@ -13,16 +13,18 @@ export default {
         },
         {
             title: 'Title and short description',
-            render: () =>
-                <ComponentRow title="Title" description="Description" />,
+            render: () => (
+                <ComponentRow title="Title" description="Description" />
+            ),
         },
         {
             title: 'Title and long description',
-            render: () =>
+            render: () => (
                 <ComponentRow
                     title="Title"
                     description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                />,
+                />
+            ),
         },
     ],
 };

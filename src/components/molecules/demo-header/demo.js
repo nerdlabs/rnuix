@@ -17,8 +17,9 @@ export default {
         },
         {
             title: 'Long title',
-            render: () =>
-                <DemoHeader title="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod" />,
+            render: () => (
+                <DemoHeader title="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod" />
+            ),
         },
     ],
 };

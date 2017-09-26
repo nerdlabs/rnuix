@@ -15,26 +15,28 @@ export default {
     demos: [
         {
             title: 'Normal mode',
-            render: () =>
-                <DemoTile title="title" render={() => <Text>Content</Text>} />,
+            render: () => (
+                <DemoTile title="title" render={() => <Text>Content</Text>} />
+            ),
         },
         {
             title: 'Full screen mode',
-            render: () =>
+            render: () => (
                 <DemoTile
                     title="title"
                     isFullScreen
                     style={{ height: 50 }}
                     render={() => <Text>Content</Text>}
-                />,
+                />
+            ),
         },
         {
             title: 'Full screen mode without header',
-            render: () =>
+            render: () => (
                 <DemoTile
                     title="title"
                     isFullScreen
-                    render={() =>
+                    render={() => (
                         <View
                             style={{
                                 width: metrics.window.width,
@@ -46,13 +48,16 @@ export default {
                             }}
                         >
                             <Text>Large content</Text>
-                        </View>}
-                />,
-            renderHeader: (props: HeaderProps) =>
+                        </View>
+                    )}
+                />
+            ),
+            renderHeader: (props: HeaderProps) => (
                 <ExitFullScreenFAB
                     style={{ left: null, right: 20 }}
                     {...props}
-                />,
+                />
+            ),
         },
     ],
 };

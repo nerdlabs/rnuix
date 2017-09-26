@@ -12,21 +12,23 @@ export default {
     demos: [
         {
             title: 'Text content',
-            render: () =>
+            render: () => (
                 <Touchable onPress={() => {}}>
                     <Text>Touch me!</Text>
-                </Touchable>,
+                </Touchable>
+            ),
         },
         {
             title: 'No onPress disables feedback',
-            render: () =>
+            render: () => (
                 <Touchable>
                     <Text>Can't touch this</Text>
-                </Touchable>,
+                </Touchable>
+            ),
         },
         {
             title: 'Custom style',
-            render: () =>
+            render: () => (
                 <Touchable
                     onPress={() => {}}
                     activeOpacity={0.5}
@@ -34,18 +36,20 @@ export default {
                     style={styles.customWrapper}
                 >
                     <Text style={styles.customText}>Touch me!</Text>
-                </Touchable>,
+                </Touchable>
+            ),
         },
         {
             title: 'Custom style, disabled',
-            render: () =>
+            render: () => (
                 <Touchable
                     disabled
                     onPress={() => {}}
                     style={styles.customWrapper}
                 >
                     <Text style={styles.customText}>Can't touch this</Text>
-                </Touchable>,
+                </Touchable>
+            ),
         },
     ],
 };

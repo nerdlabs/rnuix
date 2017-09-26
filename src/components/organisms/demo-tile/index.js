@@ -24,12 +24,12 @@ export default function DemoTile({
 }: DemoTileProps) {
     return (
         <View style={[isFullScreen ? null : styles.container, style]}>
-            {isFullScreen
-                ? null
-                : <DemoHeader
-                      onEnterFullScreen={onEnterFullScreen}
-                      title={title}
-                  />}
+            {isFullScreen ? null : (
+                <DemoHeader
+                    onEnterFullScreen={onEnterFullScreen}
+                    title={title}
+                />
+            )}
             <DemoRenderer render={render} isFullScreen={isFullScreen} />
         </View>
     );

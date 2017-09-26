@@ -27,9 +27,7 @@ function StyledTouchableNativeFeedback({
             background={TouchableNativeFeedback.Ripple(rippleColor, borderless)}
             {...props}
         >
-            <View style={style}>
-                {children}
-            </View>
+            <View style={style}>{children}</View>
         </TouchableNativeFeedback>
     );
 }

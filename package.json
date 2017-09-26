@@ -5,7 +5,7 @@
 	"bin": "./bin/rnuix",
 	"scripts": {
 		"start": "node node_modules/react-native/local-cli/cli.js start",
-		"fmt": "prettier --write --print-width 80 --tab-width 4 --single-quote --trailing-comma all --bracket-spacing --parser flow '!(node_modules|bin|flow-typed|coverage)/**/*.js' '*.js'",
+		"fmt": "prettier --write '**/*.js'",
 		"test": "npm run flow && npm run jest",
 		"flow": "flow --show-all-errors",
 		"jest": "jest --coverage",
@@ -18,20 +18,20 @@
 		"commander": "2.11.0",
 		"denodeify": "1.2.1",
 		"glob": "7.1.2",
-		"react-navigation": "1.0.0-beta.11"
+		"react-navigation": "1.0.0-beta.13"
 	},
 	"peerDependencies": {
 		"react": ">=15.4.0-rc.4 <= 16.0.0",
 		"react-native": ">=0.39.0 <= 0.48"
 	},
 	"devDependencies": {
-		"babel-jest": "21.0.0",
+		"babel-jest": "21.2.0",
 		"babel-plugin-transform-flow-strip-types": "6.22.0",
-		"babel-preset-react-native": "3.0.2",
+		"babel-preset-react-native": "4.0.0",
 		"flow-bin": "0.49.1",
 		"husky": "0.14.3",
-		"jest": "21.0.1",
-		"prettier": "1.6.1",
+		"jest": "21.2.0",
+		"prettier": "1.7.0",
 		"react": "16.0.0-alpha.12",
 		"react-native": "0.48.4",
 		"react-test-renderer": "16.0.0-alpha.12"

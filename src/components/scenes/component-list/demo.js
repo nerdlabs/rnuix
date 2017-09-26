@@ -31,33 +31,36 @@ export default {
     demos: [
         {
             title: 'No components',
-            render: () =>
+            render: () => (
                 <ComponentList
                     navigation={{
                         navigate,
                     }}
                     screenProps={{ components: noComponents }}
-                />,
+                />
+            ),
         },
         {
             title: 'One component',
-            render: () =>
+            render: () => (
                 <ComponentList
                     navigation={{
                         navigate,
                     }}
                     screenProps={{ components: oneComponent }}
-                />,
+                />
+            ),
         },
         {
             title: 'Many components',
-            render: () =>
+            render: () => (
                 <ComponentList
                     navigation={{
                         navigate,
                     }}
                     screenProps={{ components: manyComponents }}
-                />,
+                />
+            ),
         },
     ],
 };

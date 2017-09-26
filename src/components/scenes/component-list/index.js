@@ -24,8 +24,7 @@ export default class ComponentList extends PureComponent {
     static navigationOptions = ({ navigation, screenProps }) => ({
         title: 'Components',
         headerBackTitle: null,
-        headerLeft:
-            screenProps.onExit &&
+        headerLeft: screenProps.onExit && (
             <Touchable
                 onPress={screenProps.onExit}
                 style={styles.exitButton}
@@ -38,7 +37,8 @@ export default class ComponentList extends PureComponent {
                         Platform.OS === 'ios' ? colors.blue : colors.black
                     }
                 />
-            </Touchable>,
+            </Touchable>
+        ),
     });
     props: Props;
 
@@ -60,12 +60,13 @@ export default class ComponentList extends PureComponent {
         };
     }
 
-    renderRow = (props: RenderRowProps) =>
+    renderRow = (props: RenderRowProps) => (
         <ComponentRow
             title={props.displayName}
             description={props.description}
             onPress={() => this.props.navigation.navigate('demo', props)}
-        />;
+        />
+    );
 
     render() {
         return (
