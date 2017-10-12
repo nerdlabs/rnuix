@@ -1,5 +1,5 @@
 // @flow
-import React from 'react';
+import * as React from 'react';
 import { Alert } from 'react-native';
 
 import ComponentList from './';

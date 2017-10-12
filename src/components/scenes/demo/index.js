@@ -1,5 +1,5 @@
 // @flow
-import React, { PureComponent } from 'react';
+import * as React from 'react';
 import { Image, ListView, StyleSheet, Text, View } from 'react-native';
 
 import { colors } from '../../../themes';
@@ -17,19 +17,17 @@ export type Props = {
     },
 };
 type RenderRowProps = Component;
-type DataSource = typeof ListView.DataSource;
+type State = {
+    dataSource: ListView.DataSource,
+};
 
-export default class Demo extends PureComponent {
+export default class Demo extends React.PureComponent<Props, State> {
     static navigationOptions = ({ navigation }) => ({
         title: navigation.state.params.displayName,
         headerBackTitle: null,
     });
 
-    props: Props;
-
-    state: { dataSource: DataSource };
-
-    dataSource: DataSource;
+    dataSource: ListView.DataSource;
 
     constructor(props: Props) {
         super(props);

@@ -1,5 +1,5 @@
 // @flow
-import React from 'react';
+import * as React from 'react';
 import { Alert, Text } from 'react-native';
 
 const navigate = (route: string, params?: any) => {

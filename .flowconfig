@@ -18,6 +18,7 @@
 
 ; Custom additions
 .*/node_modules/react-navigation/.*
+.*/node_modules/react-native-tab-view/.*
 
 [include]
 
@@ -49,6 +50,7 @@ unsafe.enable_getters_and_setters=true
 
 ; Custom additions
 module.name_mapper='^react-navigation$' -> 'emptyObject'
+module.name_mapper='^react-native-tab-view$' -> 'emptyObject'
 
 [version]
 ^0.53.0

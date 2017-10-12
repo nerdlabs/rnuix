@@ -1,12 +1,12 @@
 // @flow
-import React from 'react';
+import * as React from 'react';
 import { StyleSheet, Text, ScrollView } from 'react-native';
 
 import { colors } from '../../../themes';
 
 export type DemoRendererProps = {
     isFullScreen?: boolean,
-    render: () => React.Element<*>,
+    render: () => React.Element<any>,
 };
 
 export default function DemoRenderer({

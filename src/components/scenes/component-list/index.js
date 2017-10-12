@@ -1,5 +1,5 @@
 // @flow
-import React, { PureComponent } from 'react';
+import * as React from 'react';
 import { ListView, Platform, StyleSheet } from 'react-native';
 
 import { colors } from '../../../themes';
@@ -18,9 +18,11 @@ export type Props = {
     },
 };
 type RenderRowProps = Component;
-type DataSource = typeof ListView.DataSource;
+type State = {
+    dataSource: ListView.DataSource,
+};
 
-export default class ComponentList extends PureComponent {
+export default class ComponentList extends React.PureComponent<Props, State> {
     static navigationOptions = ({ navigation, screenProps }) => ({
         title: 'Components',
         headerBackTitle: null,
@@ -40,11 +42,8 @@ export default class ComponentList extends PureComponent {
             </Touchable>
         ),
     });
-    props: Props;
 
-    state: { dataSource: DataSource };
-
-    dataSource: DataSource;
+    dataSource: ListView.DataSource;
 
     constructor(props: Props) {
         super(props);
